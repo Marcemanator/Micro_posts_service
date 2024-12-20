@@ -24,9 +24,13 @@ public class PostController {
     @Value("${server.port}")
     private int serverPort;
 
+
+
     @GetMapping("/{user_id}")
     public List<Posts> getPostsByUserId(@PathVariable Long user_id){
         System.out.println("------ este es el puerto...:"+serverPort);
+
+
 
         return postServ.getPostByUser(user_id);
     }
